@@ -14,7 +14,7 @@ module "ec2" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "3.4.0"
     
-  name = "cloudgeeks-ec2-one"
+  name = "cloudgeeks-ec2-two"
   key_name = module.ec2-keypair.key_pair_name
 
   ami = "ami-04f167a56786e4b09"
