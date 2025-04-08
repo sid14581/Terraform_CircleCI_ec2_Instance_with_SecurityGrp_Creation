@@ -2,7 +2,7 @@
 module "ec2-keypair" {
   source = "./module/key-pair"
   key_name = "samplekeyname"
-  public_key = file("./modules/secrets/cloudgeeks.pub")
+  public_key = file("./module/secrets/cloudgeeks.pub")
 }
 
 module "iam-instance-profile" {
@@ -23,7 +23,7 @@ module "ec2" {
   associate_public_ip_address = true
 
   subnet_id = module.vpc.public_subnets[0]
-  vpc_security_group_ids = [module.security-group.this_security_group_id]
+  vpc_security_group_ids = [module.securitygroup.this_security_group_id]
   iam_instance_profile = module.iam-instance-profile.ec2_instance_profile_name
 
   disable_api_termination = true
