@@ -22,7 +22,7 @@ module "ec2" {
 
   associate_public_ip_address = true
 
-  subnet_id = module.vpc.public_subnets[2]
+  subnet_id = module.vpc.public_subnets[1]
   vpc_security_group_ids = [module.securitygroup.this_security_group_id]
   iam_instance_profile = module.iam-instance-profile.ec2_instance_profile_name
 
