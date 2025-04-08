@@ -15,14 +15,12 @@ workflows:
           persist-worksapce: true
           requires:
             - terraform/validate
-            
+
       - terraform/apply:
           attach-workspace: true
           context: terraform
           filters:
             branches:
-              only:
-                main
+              only: main
           requires:
-            - terraform/plan
-  
+            - terraform/plan  
