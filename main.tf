@@ -1,30 +1,30 @@
 
 # module "ec2-keypair" {
-#   source     = "./module/key-pair"
-#   key_name   = "samplekeyname"
+#   source = "./module/key-pair"
+#   key_name = "samplekeyname"
 #   public_key = file("./module/secrets/cloudgeeks.pub")
 # }
 
 # module "iam-instance-profile" {
-#   source        = "./module/ec2_instance_profile"
+#   source = "./module/ec2_instance_profile"
 #   ec2_role_name = "sampleec2rolename"
 # }
 
 # module "ec2" {
 #   source  = "terraform-aws-modules/ec2-instance/aws"
 #   version = "3.4.0"
-
-#   name     = "cloudgeeks-ec2-two"
+    
+#   name = "cloudgeeks-ec2-two"
 #   key_name = module.ec2-keypair.key_pair_name
 
-#   ami           = "ami-04f167a56786e4b09"
+#   ami = "ami-04f167a56786e4b09"
 #   instance_type = "t2.micro"
 
 #   associate_public_ip_address = true
 
-#   subnet_id              = module.vpc.public_subnets[1]
+#   subnet_id = module.vpc.public_subnets[1]
 #   vpc_security_group_ids = [module.securitygroup.this_security_group_id]
-#   iam_instance_profile   = module.iam-instance-profile.ec2_instance_profile_name
+#   iam_instance_profile = module.iam-instance-profile.ec2_instance_profile_name
 
 #   disable_api_termination = true
 
@@ -33,7 +33,7 @@
 #       encrypted   = true
 #       volume_type = "gp3"
 #       throughput  = 200
-#       volume_size = 100
+#       volume_size = 30
 #     }
 #   ]
 
